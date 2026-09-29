@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { getAssetUrl } from '../utils/assetHelper';
 
 export default function BusinessCard({ business }) {
   return (
@@ -8,7 +9,7 @@ export default function BusinessCard({ business }) {
       <div>
         <div className="relative h-56 overflow-hidden bg-agro-offwhite">
           <img
-            src={business.image}
+            src={getAssetUrl(business.image)}
             alt={business.title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             loading="lazy"

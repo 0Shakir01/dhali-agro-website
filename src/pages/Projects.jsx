@@ -3,6 +3,7 @@ import { Briefcase, MapPin, Users, Calendar, ArrowRight, CheckCircle2 } from 'lu
 import { Link } from 'react-router-dom';
 import SectionTitle from '../components/SectionTitle';
 import { projects } from '../data/projects';
+import { getAssetUrl } from '../utils/assetHelper';
 
 export default function Projects() {
   return (
@@ -30,7 +31,7 @@ export default function Projects() {
             >
               <div className={`lg:col-span-5 h-64 lg:h-full relative overflow-hidden bg-agro-offwhite ${idx % 2 === 1 ? 'lg:order-2' : ''}`}>
                 <img 
-                  src={project.image} 
+                  src={getAssetUrl(project.image)} 
                   alt={project.title}
                   className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
                   loading="lazy"

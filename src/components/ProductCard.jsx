@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Tag, Box } from 'lucide-react';
+import { getAssetUrl } from '../utils/assetHelper';
 
 export default function ProductCard({ product }) {
   return (
@@ -8,7 +9,7 @@ export default function ProductCard({ product }) {
       {/* Thumbnail */}
       <div className="relative h-56 bg-gray-50 overflow-hidden">
         <img
-          src={product.image}
+          src={getAssetUrl(product.image)}
           alt={product.name}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import SectionTitle from '../components/SectionTitle';
 import DealerCTA from '../components/DealerCTA';
 import { solutions } from '../data/solutions';
+import { getAssetUrl } from '../utils/assetHelper';
 import { Sprout, ShieldAlert, Fish, Layers, Truck, Cpu, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 const iconMap = {
@@ -47,7 +48,7 @@ export default function Solutions() {
                   <div className={`lg:col-span-5 ${isEven ? 'lg:order-2' : ''}`}>
                     <div className="rounded-2xl overflow-hidden shadow-md h-72 sm:h-80 relative group">
                       <img
-                        src={sol.image}
+                        src={getAssetUrl(sol.image)}
                         alt={sol.title}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />

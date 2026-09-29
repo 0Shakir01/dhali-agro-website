@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Image, X, ZoomIn, MapPin } from 'lucide-react';
 import SectionTitle from '../components/SectionTitle';
 import { galleryItems, galleryCategories } from '../data/gallery';
+import { getAssetUrl } from '../utils/assetHelper';
 
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -54,7 +55,7 @@ export default function Gallery() {
             >
               <div className="relative aspect-4/3 overflow-hidden bg-agro-offwhite">
                 <img
-                  src={item.image}
+                  src={getAssetUrl(item.image)}
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   loading="lazy"
@@ -112,9 +113,9 @@ export default function Gallery() {
 
               <div className="relative aspect-16/10 bg-black">
                 <img
-                  src={selectedImage.image}
+                  src={getAssetUrl(selectedImage.image)}
                   alt={selectedImage.title}
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-cover"
                 />
               </div>
 

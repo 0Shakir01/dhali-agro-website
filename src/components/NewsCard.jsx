@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, User, Clock, ArrowRight } from 'lucide-react';
+import { getAssetUrl } from '../utils/assetHelper';
 
 export default function NewsCard({ article }) {
   return (
     <article className="bg-white rounded-2xl border border-gray-100 shadow-agro hover:shadow-agro-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-full overflow-hidden group">
       <div className="h-52 overflow-hidden relative">
         <img
-          src={article.image}
+          src={getAssetUrl(article.image)}
           alt={article.title}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"

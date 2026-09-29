@@ -40,6 +40,7 @@ import { testimonials } from '../data/testimonials';
 import { projects } from '../data/projects';
 import { galleryItems } from '../data/gallery';
 import { teamMembers } from '../data/team';
+import { getAssetUrl } from '../utils/assetHelper';
 
 export default function Home() {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -116,7 +117,7 @@ export default function Home() {
             <div className="lg:col-span-5 relative">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
                 <img
-                  src="/images/farmer-consultation-bg.jpg"
+                  src={getAssetUrl("/images/farmer-consultation-bg.jpg")}
                   alt="Dhali Agro Field Agronomist with Farmer"
                   className="w-full h-[400px] sm:h-[480px] object-cover"
                   loading="lazy"
@@ -407,12 +408,12 @@ export default function Home() {
                 {/* Portrait Photo Container matching screenshot */}
                 <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-100 mb-5 shadow-inner">
                   <img
-                    src={t.image}
+                    src={getAssetUrl(t.image)}
                     alt={t.name}
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     onError={(e) => {
                       e.target.onerror = null;
-                      e.target.src = '/images/farmer-consultation-bg.jpg';
+                      e.target.src = getAssetUrl('/images/farmer-consultation-bg.jpg');
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -478,7 +479,7 @@ export default function Home() {
             <div className="lg:col-span-6">
               <div className="rounded-3xl overflow-hidden border-4 border-white/20 shadow-2xl relative">
                 <img
-                  src="/images/farmer-consultation-bg.jpg"
+                  src={getAssetUrl("/images/farmer-consultation-bg.jpg")}
                   alt="Farmer Demonstration Support"
                   className="w-full h-80 sm:h-96 object-cover"
                   loading="lazy"
@@ -535,7 +536,7 @@ export default function Home() {
                 <div>
                   <div className="relative h-48 overflow-hidden bg-agro-offwhite">
                     <img
-                      src={project.image}
+                      src={getAssetUrl(project.image)}
                       alt={project.title}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                       loading="lazy"
@@ -602,7 +603,7 @@ export default function Home() {
                 className="group relative rounded-2xl overflow-hidden aspect-4/3 bg-agro-offwhite border border-agro-border shadow-sm cursor-pointer"
               >
                 <img
-                  src={item.image}
+                  src={getAssetUrl(item.image)}
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   loading="lazy"

@@ -13,6 +13,7 @@ import {
 import { businessDivisions } from '../data/business';
 import { products } from '../data/products';
 import ProductCard from '../components/ProductCard';
+import { getAssetUrl } from '../utils/assetHelper';
 
 export default function BusinessDetails() {
   const { slug } = useParams();
@@ -47,7 +48,7 @@ export default function BusinessDetails() {
         <div className="bg-white rounded-3xl border border-agro-border overflow-hidden shadow-sm mb-16 grid grid-cols-1 lg:grid-cols-12">
           <div className="lg:col-span-6 h-72 lg:h-auto relative overflow-hidden bg-agro-offwhite">
             <img 
-              src={business.image} 
+              src={getAssetUrl(business.image)} 
               alt={business.title}
               className="w-full h-full object-cover"
             />

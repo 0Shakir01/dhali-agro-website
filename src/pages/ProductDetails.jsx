@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { products } from '../data/products';
 import ProductCard from '../components/ProductCard';
 import { saveContactMessage } from '../utils/storage';
+import { getAssetUrl } from '../utils/assetHelper';
 import {
   ArrowLeft,
   Tag,
@@ -85,7 +86,7 @@ export default function ProductDetails() {
             <div className="lg:col-span-5">
               <div className="rounded-2xl overflow-hidden bg-gray-50 border border-gray-100 shadow-sm relative h-[360px] sm:h-[420px]">
                 <img
-                  src={product.image}
+                  src={getAssetUrl(product.image)}
                   alt={product.name}
                   className="w-full h-full object-cover"
                 />

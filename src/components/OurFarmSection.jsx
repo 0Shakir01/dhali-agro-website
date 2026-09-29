@@ -1,6 +1,7 @@
 import React from 'react';
 import { Play, MapPin, Fish, Beef, Sprout, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { getAssetUrl } from '../utils/assetHelper';
 
 export default function OurFarmSection({ onOpenVideo }) {
   const farmFeatures = [
@@ -23,22 +24,22 @@ export default function OurFarmSection({ onOpenVideo }) {
 
   const farmStills = [
     {
-      src: "/images/farm/dhali-farm-gate-sign.jpg",
+      src: getAssetUrl("/images/farm/dhali-farm-gate-sign.jpg"),
       title: "Official Farm Signboard",
       subtitle: "Dhali Agro — 4 No. Ward, Abdullahpur, Charfashion"
     },
     {
-      src: "/images/farm/dhali-farm-aquaculture-wide.jpg",
+      src: getAssetUrl("/images/farm/dhali-farm-aquaculture-wide.jpg"),
       title: "Lined Aquaculture Ponds",
       subtitle: "Biosecure Fish Farming & Nursery"
     },
     {
-      src: "/images/farm/dhali-farm-livestock-facility.jpg",
+      src: getAssetUrl("/images/farm/dhali-farm-livestock-facility.jpg"),
       title: "Ventilated Livestock Unit",
       subtitle: "Modern Cattle & Dairy Facility"
     },
     {
-      src: "/images/farm/dhali-farm-worker-walkway.jpg",
+      src: getAssetUrl("/images/farm/dhali-farm-worker-walkway.jpg"),
       title: "Field Operations & Dikes",
       subtitle: "Trained Agro Personnel on Site"
     }
@@ -73,11 +74,11 @@ export default function OurFarmSection({ onOpenVideo }) {
                 loop
                 muted
                 playsInline
-                poster="/images/farm/dhali-farm-video-poster.jpg"
+                poster={getAssetUrl("/images/farm/dhali-farm-video-poster.jpg")}
               >
-                <source src="/videos/farm-teaser.mp4" type="video/mp4" />
+                <source src={getAssetUrl("/videos/farm-teaser.mp4")} type="video/mp4" />
                 <img 
-                  src="/images/farm/dhali-farm-aquaculture-wide.jpg" 
+                  src={getAssetUrl("/images/farm/dhali-farm-aquaculture-wide.jpg")} 
                   alt="Dhali Agro Farm Bhola" 
                   className="w-full h-full object-cover"
                 />

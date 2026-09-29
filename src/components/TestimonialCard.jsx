@@ -1,5 +1,6 @@
 import React from 'react';
 import { Star, MapPin, Quote } from 'lucide-react';
+import { getAssetUrl } from '../utils/assetHelper';
 
 export default function TestimonialCard({ testimonial }) {
   return (
@@ -30,7 +31,7 @@ export default function TestimonialCard({ testimonial }) {
       {/* Author Profile */}
       <div className="pt-4 border-t border-gray-100 flex items-center gap-3.5 mt-auto">
         <img
-          src={testimonial.image}
+          src={getAssetUrl(testimonial.image)}
           alt={testimonial.name}
           className="w-12 h-12 rounded-full object-cover border-2 border-agro-green shrink-0"
           loading="lazy"

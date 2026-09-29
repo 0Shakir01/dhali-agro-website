@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sprout, ShieldAlert, Fish, Layers, Truck, Cpu } from 'lucide-react';
+import { getAssetUrl } from '../utils/assetHelper';
 
 const iconMap = {
   Sprout: Sprout,
@@ -18,7 +19,7 @@ export default function ServiceCard({ solution }) {
     <div className="bg-white rounded-2xl border border-gray-100 shadow-agro overflow-hidden group hover:shadow-agro-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-full">
       <div className="h-48 overflow-hidden relative">
         <img
-          src={solution.image}
+          src={getAssetUrl(solution.image)}
           alt={solution.title}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"

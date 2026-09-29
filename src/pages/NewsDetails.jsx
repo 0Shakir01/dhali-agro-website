@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { newsArticles } from '../data/news';
 import NewsCard from '../components/NewsCard';
+import { getAssetUrl } from '../utils/assetHelper';
 
 export default function NewsDetails() {
   const { slug } = useParams();
@@ -74,7 +75,7 @@ export default function NewsDetails() {
           {/* Featured Image */}
           <div className="aspect-16/9 w-full bg-agro-offwhite overflow-hidden">
             <img 
-              src={article.image} 
+              src={getAssetUrl(article.image)} 
               alt={article.title}
               className="w-full h-full object-cover"
             />

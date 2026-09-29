@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { X, Play, MapPin, Film, Download, Maximize2 } from 'lucide-react';
+import { getAssetUrl } from '../utils/assetHelper';
 
 export default function FarmVideoModal({ isOpen, onClose }) {
   const videoRef = useRef(null);
@@ -68,13 +69,13 @@ export default function FarmVideoModal({ isOpen, onClose }) {
             className="w-full h-full object-contain"
             controls
             playsInline
-            poster="/images/farm/dhali-farm-video-poster.jpg"
+            poster={getAssetUrl("/images/farm/dhali-farm-video-poster.jpg")}
             preload="metadata"
           >
             {/* Optimized high-speed web stream version */}
-            <source src="/videos/dhali-farm-tour-web.mp4" type="video/mp4" />
+            <source src={getAssetUrl("/videos/dhali-farm-tour-web.mp4")} type="video/mp4" />
             {/* Original source fallback */}
-            <source src="/videos/2560.mp4" type="video/mp4" />
+            <source src={getAssetUrl("/videos/2560.mp4")} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>

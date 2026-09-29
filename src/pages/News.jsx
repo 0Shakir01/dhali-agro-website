@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import NewsCard from '../components/NewsCard';
 import SectionTitle from '../components/SectionTitle';
 import { newsArticles } from '../data/news';
+import { getAssetUrl } from '../utils/assetHelper';
 
 export default function News() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -41,7 +42,7 @@ export default function News() {
           <div className="bg-white rounded-2xl overflow-hidden border border-agro-border shadow-md mb-16 grid grid-cols-1 lg:grid-cols-12">
             <div className="lg:col-span-7 h-64 lg:h-auto relative overflow-hidden bg-agro-offwhite">
               <img 
-                src={featuredArticle.image} 
+                src={getAssetUrl(featuredArticle.image)} 
                 alt={featuredArticle.title}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               />

@@ -4,6 +4,7 @@ import SectionTitle from '../components/SectionTitle';
 import DealerCTA from '../components/DealerCTA';
 import FarmVideoModal from '../components/FarmVideoModal';
 import { teamMembers } from '../data/team';
+import { getAssetUrl } from '../utils/assetHelper';
 import {
   Award,
   Users,
@@ -112,7 +113,7 @@ export default function About() {
             <div className="lg:col-span-6">
               <div className="rounded-3xl overflow-hidden shadow-agro-xl border border-gray-100">
                 <img
-                  src="/images/gallery-field-2.jpg"
+                  src={getAssetUrl("/images/gallery-field-2.jpg")}
                   alt="Dhali Agro Farmer Partnership"
                   className="w-full h-[400px] object-cover"
                 />
@@ -169,7 +170,7 @@ export default function About() {
                 onClick={() => setIsFarmVideoOpen(true)}
               >
                 <img
-                  src="/images/farm/dhali-farm-aquaculture-wide.jpg"
+                  src={getAssetUrl("/images/farm/dhali-farm-aquaculture-wide.jpg")}
                   alt="Dhali Agro Farm in Charfashion Bhola"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90"
                 />
@@ -291,12 +292,12 @@ export default function About() {
                 {/* Portrait Photo Container */}
                 <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-100 mb-5 shadow-inner">
                   <img
-                    src={t.image}
+                    src={getAssetUrl(t.image)}
                     alt={t.name}
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     onError={(e) => {
                       e.target.onerror = null;
-                      e.target.src = '/images/farmer-consultation-bg.jpg';
+                      e.target.src = getAssetUrl('/images/farmer-consultation-bg.jpg');
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -326,7 +327,7 @@ export default function About() {
             <div className="lg:col-span-6">
               <div className="rounded-3xl overflow-hidden shadow-agro-xl border border-gray-100">
                 <img
-                  src="/images/gallery-lab-1.jpg"
+                  src={getAssetUrl("/images/gallery-lab-1.jpg")}
                   alt="Dhali Agro Seed Testing Lab"
                   className="w-full h-[400px] object-cover"
                 />
