@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Dhali Agro</title>
+    <script>
+      // Single Page Apps for GitHub Pages
+      // Redirect direct deep-links to HashRouter
+      (function() {
+        var path = window.location.pathname;
+        var repo = '/dhali-agro-website';
+        if (path.indexOf(repo) === 0) {
+          var subpath = path.slice(repo.length);
+          if (subpath.charAt(0) !== '/') {
+            subpath = '/' + subpath;
+          }
+          window.location.replace(repo + '/#' + subpath + window.location.search + window.location.hash);
+        } else {
+          window.location.replace(repo + '/');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <p style="font-family: sans-serif; text-align: center; margin-top: 50px;">Redirecting to Dhali Agro...</p>
+  </body>
+</html>
