@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { X, Play, MapPin, Film, Download, Maximize2 } from 'lucide-react';
-import { getAssetUrl } from '../utils/assetHelper';
+import { publicAsset, getAssetUrl } from '../utils/assetHelper';
 
 export default function FarmVideoModal({ isOpen, onClose }) {
   const videoRef = useRef(null);
@@ -69,13 +69,13 @@ export default function FarmVideoModal({ isOpen, onClose }) {
             className="w-full h-full object-contain"
             controls
             playsInline
-            poster={getAssetUrl("/images/farm/dhali-farm-video-poster.jpg")}
+            poster={publicAsset('images/farm/dhali-farm-video-poster.jpg')}
             preload="metadata"
           >
-            {/* Optimized high-speed web stream version */}
-            <source src={getAssetUrl("/videos/dhali-farm-tour-web.mp4")} type="video/mp4" />
-            {/* Original source fallback */}
-            <source src={getAssetUrl("/videos/2560.mp4")} type="video/mp4" />
+            {/* Primary web-optimized farm documentary */}
+            <source src={publicAsset('videos/dhali-farm-tour-web.mp4')} type="video/mp4" />
+            {/* Fallback copy */}
+            <source src={publicAsset('videos/2560.mp4')} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
@@ -95,13 +95,13 @@ export default function FarmVideoModal({ isOpen, onClose }) {
 
           <div className="flex items-center gap-3">
             <a
-              href="/videos/2560.mp4"
+              href={publicAsset('videos/dhali-farm-tour-web.mp4')}
               download="dhali-agro-farm-charfashion.mp4"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-neutral-200 transition-colors text-[11px] font-medium"
-              title="Download original Full HD copy"
+              title="Download Farm Tour Video"
             >
               <Download size={13} />
-              <span>Full HD (354MB)</span>
+              <span>Official Video (MP4)</span>
             </a>
           </div>
         </div>

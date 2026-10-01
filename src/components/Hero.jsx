@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Store, ShieldCheck, Sprout, Users, Award, Play } from 'lucide-react';
-import { getAssetUrl } from '../utils/assetHelper';
+import { publicAsset, getAssetUrl } from '../utils/assetHelper';
 
 export default function Hero({ onOpenVideo }) {
   return (
@@ -14,11 +14,11 @@ export default function Hero({ onOpenVideo }) {
           loop
           muted
           playsInline
-          poster={getAssetUrl('/images/farm/dhali-farm-aquaculture-wide.jpg')}
+          poster={publicAsset('images/farm/dhali-farm-aquaculture-wide.jpg')}
         >
-          <source src={getAssetUrl('/videos/farm-teaser.mp4')} type="video/mp4" />
+          <source src={publicAsset('videos/farm-teaser.mp4')} type="video/mp4" />
           <img
-            src={getAssetUrl('/images/hero-agriculture-bg.jpg')}
+            src={publicAsset('images/hero-agriculture-bg.jpg')}
             alt="Bangladesh Lush Agriculture & Farm"
             className="w-full h-full object-cover object-center"
           />

@@ -38,7 +38,6 @@ dist-ssr/
 *.sw?
 Thumbs.db
 
-# Large media files exceeding GitHub's 100MB limit
-# Note: The web-optimized version (dhali-farm-tour-web.mp4 - 44MB) and teaser (farm-teaser.mp4 - 2MB)
-# are included in Git. The uncompressed raw video (338MB) is excluded to prevent push rejection.
-public/videos/2560.mp4
+# Large media files note:
+# Raw uncompressed video files (354MB) are stored in scratch/ and excluded from Git.
+# Web-optimized videos (2560.mp4, dhali-farm-tour-web.mp4, farm-teaser.mp4) are under 50MB and tracked.

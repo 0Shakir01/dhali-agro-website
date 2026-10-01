@@ -1,7 +1,7 @@
 /**
  * Helper to resolve public assets safely with Vite base path (e.g. /dhali-agro-website/)
  */
-export function getAssetUrl(path) {
+export const publicAsset = (path) => {
   if (!path) return '';
   if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('data:') || path.startsWith('blob:')) {
     return path;
@@ -13,6 +13,8 @@ export function getAssetUrl(path) {
     return path;
   }
   
-  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  const cleanPath = path.replace(/^\/+/, '');
   return `${base}${cleanPath}`;
-}
+};
+
+export const getAssetUrl = publicAsset;

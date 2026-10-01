@@ -1,7 +1,7 @@
 import React from 'react';
 import { Play, MapPin, Fish, Beef, Sprout, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { getAssetUrl } from '../utils/assetHelper';
+import { publicAsset, getAssetUrl } from '../utils/assetHelper';
 
 export default function OurFarmSection({ onOpenVideo }) {
   const farmFeatures = [
@@ -74,11 +74,11 @@ export default function OurFarmSection({ onOpenVideo }) {
                 loop
                 muted
                 playsInline
-                poster={getAssetUrl("/images/farm/dhali-farm-video-poster.jpg")}
+                poster={publicAsset('images/farm/dhali-farm-video-poster.jpg')}
               >
-                <source src={getAssetUrl("/videos/farm-teaser.mp4")} type="video/mp4" />
+                <source src={publicAsset('videos/farm-teaser.mp4')} type="video/mp4" />
                 <img 
-                  src={getAssetUrl("/images/farm/dhali-farm-aquaculture-wide.jpg")} 
+                  src={publicAsset('images/farm/dhali-farm-aquaculture-wide.jpg')} 
                   alt="Dhali Agro Farm Bhola" 
                   className="w-full h-full object-cover"
                 />
